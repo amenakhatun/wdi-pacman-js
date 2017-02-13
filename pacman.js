@@ -99,13 +99,17 @@ function eatDot() {
 }
 
 function eatGhost(ghost) {
-  if (ghost.edible){
-    points += 200
-    console.log('\nyou just ate a ghost!');
+  if (ghost.edible === true){
+    score += 200;
+    console.log('\n you just ate' + ghost.name + '\n and his colour is' + ghost.colour);
   }
-  else{
-    lives -= 1
+
+  else {
+    lives -=1;
+    gameOver()
+    console.log('\n you were killed by' + ghost.name);
   }
+
 
 gameOver(lives);
 
@@ -133,7 +137,7 @@ function processInput(key) {
         break
       }
       else {
-        console.log('\n No Power PEllets Left!');
+        console.log('\n No Power Pellets Left!');
       }
     case '1':
       eatGhost(inky);
