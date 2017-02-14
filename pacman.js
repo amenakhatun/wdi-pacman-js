@@ -37,7 +37,12 @@ var clyde = {
   edible: false
 };
 
-var ghosts = ['Inky', 'Blinky', 'Pinky', 'Clyde']
+var ghosts = [ inky, blinky, pinky, clyde]
+
+for (var i = 0; i < ghosts.length; i++) {
+  console.log(ghosts[i]);
+
+}
 
 
 // Draw the screen functionality
@@ -74,6 +79,19 @@ function displayMenu() {
 }
 
 
+
+//
+// if (ghost.edible == true){
+//   console.log('edible');
+// }
+// else (ghost.edible == false)
+//   console.log('inedible');
+
+
+
+
+
+
 function displayPrompt() {
   // process.stdout.write is similar to console.log except it doesn't add a new line after the text
   process.stdout.write('\nWaka Waka :v '); // :v is the Pac-Man emoji.
@@ -90,7 +108,6 @@ function eatPowerPellet(){
   powerPellets = powerPellets - 1;
 
 }
-
 
 
 function eatDot() {
