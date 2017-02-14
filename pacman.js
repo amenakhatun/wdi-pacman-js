@@ -10,7 +10,7 @@ var inky = {
   name: 'Inky',
   colour: 'Red',
   character: 'Shadow',
-  edible: false
+  edible: true
 };
 
 var blinky = {
@@ -18,7 +18,7 @@ var blinky = {
   name: 'Blinky',
   colour: 'Cyan',
   character: 'Speedy',
-  edible: false
+  edible: true
 };
 
 var pinky = {
@@ -26,7 +26,7 @@ var pinky = {
   name: 'Pinky',
   colour: 'Pink',
   character: 'Bashful',
-  edible: false
+  edible: true
 };
 
 var clyde = {
@@ -34,7 +34,7 @@ var clyde = {
   name: 'Clyde',
   colour: 'Orange',
   character: 'Pokey',
-  edible: false
+  edible: true
 };
 
 var ghosts = [ inky, blinky, pinky, clyde]
@@ -43,6 +43,7 @@ for (var i = 0; i < ghosts.length; i++) {
   console.log(ghosts[i]);
 
 }
+
 
 
 // Draw the screen functionality
@@ -70,26 +71,22 @@ function displayMenu() {
     if (powerPellets > 0){
   console.log('(p) Eat Power-Pellets');
   }
-  console.log('(1) Eat Inky');
-  console.log('(2) Eat Blinky');
-  console.log('(3) Eat Pinky');
-  console.log('(4) Eat Clyde');
+  console.log('(1) Eat Inky' + getEdibleString(inky));
+  console.log('(2) Eat Blinky' + getEdibleString(blinky));
+  console.log('(3) Eat Pinky' + getEdibleString(pinky));
+  console.log('(4) Eat Clyde' + getEdibleString(clyde));
   console.log('(q) Quit');
 
 }
 
-
-
-//
-// if (ghost.edible == true){
-//   console.log('edible');
-// }
-// else (ghost.edible == false)
-//   console.log('inedible');
-
-
-
-
+function getEdibleString(ghost) {
+  if (ghost.edible == true){
+    return "edible";
+  }
+  else{
+    return "inedible";
+  }
+}
 
 
 function displayPrompt() {
@@ -106,6 +103,7 @@ function eatPowerPellet(){
   score = score + 50;
   edible = true;
   powerPellets = powerPellets - 1;
+  
 
 }
 
